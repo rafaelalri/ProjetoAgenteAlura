@@ -9,43 +9,8 @@ Este projeto implementa um agente de FAQ capaz de entender perguntas em linguage
 
 O objetivo principal é reduzir o volume de chamados no suporte humano, oferecendo respostas instantâneas e consistentes para as dúvidas mais comuns, e escalar automaticamente para um atendente humano quando a pergunta foge do escopo da base de conhecimento ou exige intervenção manual (ex.: cobrança duplicada, bloqueio de conta).
 
-Arquitetura da solução
-
-O agente segue uma arquitetura do tipo RAG (Retrieval-Augmented Generation), combinando busca na base de conhecimento com geração de linguagem natural:
-
-
-┌─────────────┐     ┌──────────────────┐     ┌───────────────────┐
-│   Usuário    │────▶│  Camada de NLU    │────▶│  Motor de busca    │
-│ (pergunta)   │     │ (interpretação da │     │  (embeddings /     │
-└─────────────┘     │  intenção)        │     │  palavras-chave)   │
-                     └──────────────────┘     └─────────┬──────────┘
-                                                          │
-                                                          ▼
-                                              ┌───────────────────────┐
-                                              │ Base de conhecimento   │
-                                              │ (FaqSuporteSaas.csv)   │
-                                              └─────────┬─────────────┘
-                                                          │
-                                                          ▼
-                                              ┌───────────────────────┐
-                                              │  Modelo de linguagem   │
-                                              │  (geração da resposta) │
-                                              └─────────┬─────────────┘
-                                                          │
-                                                          ▼
-                                              ┌───────────────────────┐
-                                              │  Regras de escalonamento│
-                                              │  (quando_escalar)      │
-                                              └─────────┬─────────────┘
-                                                          │
-                                          ┌───────────────┴───────────────┐
-                                          ▼                                ▼
-                                 Resposta ao usuário               Encaminha para suporte humano
-
-
-
-Fluxo resumido:
-O usuário envia uma pergunta pelo canal de atendimento (chat, widget, WhatsApp, etc.).
+Fluxo resumido do projeto:
+O usuário envia uma pergunta 
 A camada de NLU identifica a intenção e as palavras-chave da pergunta.
 O motor de busca compara a pergunta com as entradas da base (pergunta, palavras_chave, categoria, subcategoria) e recupera o item mais relevante.
 O modelo de linguagem gera a resposta final a partir do campo resposta, adaptando o tom quando necessário.
