@@ -22,3 +22,29 @@ Busca/recuperação: embeddings de texto (ex.: sentence-transformers) ou busca p
 Modelo de linguagem: API de LLM (ex.: Claude, via Anthropic API) para geração e formatação das respostas
 Armazenamento da base: arquivo CSV (FaqSuporteSaas.csv), podendo ser migrado para um banco vetorial (ex.: Chroma, FAISS, Pinecone) em produção
 Interface de atendimento (opcional): integração via webhook com chat, WhatsApp ou widget web
+
+Exemplos de perguntas que o agente consegue responder
+Como faço login?
+Esqueci minha senha. O que faço?
+Como altero meu plano?
+Por que meu pagamento foi recusado?
+Como criar um agente?
+Como cancelo minha assinatura?
+É possível ter mais de um usuário na mesma conta?
+Como emito a nota fiscal da minha assinatura?
+📝 Exemplos de respostas geradas pelo agente
+
+Pergunta: Como faço login?
+
+Para acessar sua conta, abra a página de login da plataforma e informe o endereço de e-mail cadastrado e sua senha. Depois, selecione o botão "Entrar". Se os dados estiverem corretos, você será direcionado ao painel principal. Caso a senha esteja incorreta, utilize a opção "Esqueci minha senha" para iniciar o processo de recuperação.
+
+Pergunta: Por que meu pagamento foi recusado?
+
+Um pagamento pode ser recusado por motivos como dados incorretos do cartão, cartão expirado, limite insuficiente ou bloqueio do banco emissor. Verifique os dados de pagamento cadastrados e, se possível, tente outro método disponível na plataforma. Se o problema persistir, nossa equipe de suporte pode analisar a transação com mais detalhes.
+
+
+Pergunta: Já tentei resetar minha senha três vezes e não recebo o e-mail.
+
+Percebi que você já tentou recuperar sua senha sem sucesso. Vou encaminhar seu caso para nossa equipe de suporte, que poderá verificar diretamente o seu cadastro e o envio do e-mail de recuperação. 🔁 Transferindo para atendimento humano...
+
+
